@@ -2,8 +2,6 @@ const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
 const examModel = require("./models/exam")
-const { response } = require("express")
-const { request } = require("express")
 
 const app = express()
 
@@ -11,7 +9,7 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-mongoose.connect("mongodb+srv://nevin1111:footballnevin@cluster0.ltgqnuy.mongodb.net/internalmark?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect("mongodb+srv://nevin1111:internalmarkmongo@cluster0.ltgqnuy.mongodb.net/internalmark?retryWrites=true&w=majority&appName=Cluster0")
 
 app.post("/calculate", (request, response) => {
 
@@ -46,7 +44,11 @@ app.post("/calculate", (request, response) => {
             exam2: exam2,
             totalExam2: totalExam2,
             assignment1: assignment1,
-            assignment2: assignment2
+            assignment2: assignment2,
+            attendanceMark: attendance,
+            examMark: firstExam + secondExam,
+            assignmentMark: assignment,
+            internalMark: total
         })
 
     data_store.save()
@@ -62,9 +64,9 @@ app.post("/calculate", (request, response) => {
     })
 })
 
-app.get("/viewall",(request,response)=>{
+app.get("/viewall", (request, response) => {
     examModel.find().then(
-        (items)=>{
+        (items) => {
             response.json(items)
         }
     ).catch()

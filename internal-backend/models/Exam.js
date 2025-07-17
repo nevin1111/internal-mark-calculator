@@ -13,6 +13,10 @@ const examSchema = mongoose.Schema(
         totalExam2: String,
         assignment1: String,
         assignment2: String,
+        attendanceMark: String,
+        examMark: String,
+        assignmentMark: String,
+        internalMark: String
     }
 )
 

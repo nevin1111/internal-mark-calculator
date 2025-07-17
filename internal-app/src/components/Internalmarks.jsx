@@ -112,10 +112,11 @@ const Internalmarks = () => {
                                         <h4 class="card-title">Admission Number: {output.admno} </h4>
                                         <h4 class="card-title">Batch: {output.batch} </h4>
                                         <hr />
-                                        <h4 class="text-danger">Internal Mark: {output.internalMark} </h4>
-                                        <h5 class="card-title">Attandance Mark: {output.attandance} </h5>
-                                        <h5 class="card-title">Assignment Mark: {output.assignment} </h5>
-                                        <h5 class="card-title">Exam Mark: {output.Exam} </h5>
+                                        <h4 class="text-danger">Internal Mark: {output.internalMark} / 40 </h4>
+                                        <br/ >
+                                        <h5 class="card-title">Attandance Mark: {output.attandance} / 8</h5>
+                                        <h5 class="card-title">Assignment Mark: {output.assignment} / 12</h5>
+                                        <h5 class="card-title">Exam Mark: {output.Exam} / 20</h5>
                                     </div>
                                 </div>
                             </div>
